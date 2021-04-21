@@ -1,3 +1,5 @@
 {
-  const number = 10;
+  let x = 3;
+  const y = x--;
+  console.log(x, y);
 }
