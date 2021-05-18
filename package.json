@@ -1,5 +1,10 @@
 {
   "name": "java-script-concepts",
+  "quokka": {
+    "plugins": [
+      "jsdom-quokka-plugin"
+    ]
+  },
   "version": "1.0.0",
   "description": "",
   "main": "arrow-function.js",
@@ -20,6 +25,7 @@
   "dependencies": {
     "@commitlint/config-conventional": "^12.1.1",
     "husky": "^6.0.0",
+    "jsdom-quokka-plugin": "^1.0.16",
     "lint-staged": "^10.5.4"
   }
 }
