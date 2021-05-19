@@ -1,7 +1,9 @@
 {
-    "cSpell.words": [
-        "Cabuloso",
-        "Marizete",
-        "endregion"
-    ]
+  "cSpell.words": ["Cabuloso", "Marizete", "endregion"],
+  "editor.codeLens": false,
+  "typescript.implementationsCodeLens.enabled": false,
+  "typescript.referencesCodeLens.enabled": false,
+  "gitlens.views.commits.showBranchComparison": false,
+  "gitlens.views.commits.pullRequests.showForBranches": false,
+  "gitlens.views.commits.pullRequests.enabled": false
 }

@@ -26,6 +26,14 @@
   Object.defineProperty(car, "color", { configurable: false, value: "red" });
   console.log(delete car.color);
   console.log(car.color);
+
+  // também não é possível deletar variáveis  declaradas com
+  // var, let ou const ou algo que não seja uma propriedade
+
+  const name = "Hello";
+  function foo(){}
+  console.log(delete name)
+  console.log(delete foo)
 }
 
 {
