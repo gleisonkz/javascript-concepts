@@ -1,5 +1,5 @@
 {
-  /* Array.Prototype.findIndex
+  /* Array.Prototype.flatMap
 
   retorna um novo array, executando uma função de callback 
   para cada elemento do array e então 'planificando' 
