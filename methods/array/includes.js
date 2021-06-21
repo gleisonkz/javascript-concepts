@@ -1,8 +1,8 @@
 {
-  /* Array.from
+  /* Array.includes
 
   verifica se um array possui 
-  um determinado entre seus itens.
+  um determinado valor entre seus itens.
 */
 
   const numbers = [1, 2, 3];
