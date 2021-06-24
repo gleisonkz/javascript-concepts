@@ -20,21 +20,21 @@ console.log(Array.prototype.slice.call(arrayLike));
 {
   // Possuem o mesmo getter para a índices
   const letters = ["d", "e", "f"];
-  function indexExample() {
+  function indexAccessExample() {
     console.log(arguments[0]);
     console.log(letters[0]);
   }
-  indexExample("a", "b", "c");
+  indexAccessExample("a", "b", "c");
 }
 
 {
   // Ambos são objetos
   const letters = ["d", "e", "f"];
-  function indexExample() {
+  function typeOfExample() {
     console.log(typeof letters);
     console.log(typeof arguments);
   }
-  indexExample("a", "b", "c");
+  typeOfExample("a", "b", "c");
 }
 
 // Diferenças
@@ -42,42 +42,44 @@ console.log(Array.prototype.slice.call(arrayLike));
 {
   // Array-Like não é um array
   const letters = ["d", "e", "f"];
-  function indexExample() {
+  function isArrayExample() {
     console.log(Array.isArray(letters));
     console.log(Array.isArray(arguments));
   }
-  indexExample("a", "b", "c");
+  isArrayExample("a", "b", "c");
 }
 
 {
-  // Não é possível atribuir um valor para a propriedade length
-  // de um array like
+  // alterar o valor da propriedade length
+  // de um array like não tem qualquer efeito sobre seus itens
   const letters = ["d", "e", "f"];
-  function indexExample() {
+  function changeLengthExample() {
     letters.length = 0;
     arguments.length = 0;
+    console.log(letters.length);
+    console.log(arguments.length);
     console.log(letters[1]);
     console.log(arguments[1]);
   }
-  indexExample("a", "b", "c");
+  changeLengthExample("a", "b", "c");
 }
 
 {
-  // a propriedade length de um Array-Like
-  //geralmente não é atualizada automaticamente
+  // Adicionar ou remover itens em um array-like
+  //não altera o valor da propriedade length
 
   const letters = ["d", "e", "f"];
-  function foo() {
+  function addItensExample() {
     letters[3] = "g";
     arguments[4] = "e";
     console.log(letters.length);
     console.log(arguments.length);
   }
-  foo("a", "b", "c");
+  addItensExample("a", "b", "c");
 }
 
 {
-  // Array-Like não tem acesso aos métodos de instância de array
+  // Um array-Like não tem acesso aos métodos de instância de array
 
   const letters = ["d", "e", "f"];
   function foo() {

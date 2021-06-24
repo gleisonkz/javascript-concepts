@@ -1,7 +1,11 @@
-({
-  plugins: ["jsdom-quokka-plugin"],
-  jsdom: { file: "test.html" }, // Located in project root
-});
+const letters = ["d", "e", "f"];
+function lengthExample() {
+  console.log(arguments.length);
+  console.log(letters.length);
+}
+lengthExample("a", "b", "c");
 
-const input$ = document.querySelector("input");
-console.log(input$.value);
+// ({
+//   plugins: ["jsdom-quokka-plugin"],
+//   jsdom: { file: "test.html" }, // Located in project root
+// });
