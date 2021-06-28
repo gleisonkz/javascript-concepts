@@ -14,6 +14,7 @@ Entradas incorretas:
 
 function checkSyntax(pattern) {
   const openings = ["(", "[", "{", "<"];
+  const closings = { ")": "(", "]": "[", "}": "{", ">": "<" };
   let stack = [];
 
   for (let i = 0; i < pattern.length; i++) {
@@ -27,10 +28,8 @@ function checkSyntax(pattern) {
     if (stack.length == 0) return false;
 
     const popped = stack.pop();
-    if (current === ")" && popped !== "(") return false;
-    if (current === "}" && popped !== "{") return false;
-    if (current === "]" && popped !== "[") return false;
-    if (current === ">" && popped !== "<") return false;
+    const opening = closings[current];
+    if (popped !== opening) return false;
   }
 
   return stack.length == 0;
