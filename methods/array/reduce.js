@@ -1,7 +1,7 @@
 {
   /* Array.Prototype.reduce
 
-reduzir uma coleção de itens a um único valor.*/
+  reduzir uma coleção de itens a um único valor.*/
 
   const persons = [
     { name: "John Doe", earthShape: "Flat", QI: -320 },
