@@ -16,28 +16,29 @@ Ex:
 */
 
 function dashatize(target) {
-  const idOdd = (num) => num % 2 === 1;
-  if (typeof target !== "number") return NaN;
-  if (Number.isNaN(target)) return "NaN";
-  return Math.abs(target)
-    .toString()
-    .split("")
-    .reduce((acc, cur, index, arr) => {
-      const previous = arr[index - 1];
-      if (idOdd(previous) && idOdd(cur)) return (acc += `${cur}-`);
-      if ((!idOdd(previous) || previous === undefined) && idOdd(cur))
-        return (acc += `-${cur}-`);
-      return (acc += cur);
-    }, "")
+  const idOdd = (num) => num & 1;
+
+  return [...String(target)]
+    .reduce((acc, cur) => (idOdd(cur) ? `${acc}-${cur}-` : `${acc}${cur}`), "")
+    .replace(/--/g, "-")
     .replace(/(^-|-$)/g, "");
 }
 
-function dashatize(num) {
-  return String(num)
-    .replace(/([13579])/g, "-$1-")
-    .replace(/--+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
+// function dashatize(target) {
+//   return [...String(target)]
+//     .filter((c) => c != "-")
+//     .map((item, index, array) =>
+//       index > 0 && (item & 1 || array[index - 1] & 1) ? "-" + item : item
+//     )
+//     .join("");
+// }
+
+// function dashatize(num) {
+//   return String(num)
+//     .replace(/([13579])/g, "-$1-")
+//     .replace(/--+/g, "-")
+//     .replace(/(^-|-$)/g, "");
+// }
 
 // Teste 1 deve retornar "2-7-4";
 console.log(dashatize(274));
@@ -49,11 +50,11 @@ console.log(dashatize(5311) === "5-3-1-1");
 
 // Teste 3 deve retornar "86-3-20";
 console.log(dashatize(86320));
-console.log(dashatize(5311) === "5-3-1-1");
+console.log(dashatize(86320) === "86-3-20");
 
 // Teste 4 deve retornar "9-7-4-3-02";
 console.log(dashatize(974302));
-console.log(dashatize(5311) === "5-3-1-1");
+console.log(dashatize(974302) === "9-7-4-3-02");
 
 // Teste 5 deve retornar "68-1-5";
 console.log(dashatize(6815));
