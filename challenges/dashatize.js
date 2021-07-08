@@ -17,27 +17,21 @@ Ex:
 
 function dashatize(target) {
   const idOdd = (num) => num % 2 === 1;
-  if (typeof target !== "number") return NaN;
-  if (Number.isNaN(target)) return "NaN";
-  return Math.abs(target)
+
+  return target
     .toString()
     .split("")
-    .reduce((acc, cur, index, arr) => {
-      const previous = arr[index - 1];
-      if (idOdd(previous) && idOdd(cur)) return (acc += `${cur}-`);
-      if ((!idOdd(previous) || previous === undefined) && idOdd(cur))
-        return (acc += `-${cur}-`);
-      return (acc += cur);
-    }, "")
+    .reduce((acc, cur) => (idOdd(cur) ? (acc += `-${cur}-`) : (acc += cur)), "")
+    .replace(/--/g, "-")
     .replace(/(^-|-$)/g, "");
 }
 
-function dashatize(num) {
-  return String(num)
-    .replace(/([13579])/g, "-$1-")
-    .replace(/--+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
+// function dashatize(num) {
+//   return String(num)
+//     .replace(/([13579])/g, "-$1-")
+//     .replace(/--+/g, "-")
+//     .replace(/(^-|-$)/g, "");
+// }
 
 // Teste 1 deve retornar "2-7-4";
 console.log(dashatize(274));
