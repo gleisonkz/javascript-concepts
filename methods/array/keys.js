@@ -13,10 +13,11 @@ for (const key of iterator) {
   console.log(key);
 }
 
-// indices vazios também são considerados
+// indices com valores
+//  vazios também são considerados
 
 const lettersWithHoles = ["a", , "c"];
-const iteratorWithHoles = letters.keys();
+const iteratorWithHoles = lettersWithHoles.keys();
 
 for (const key of iteratorWithHoles) {
   console.log(key);
