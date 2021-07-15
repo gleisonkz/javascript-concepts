@@ -3,14 +3,17 @@
 Desafio 6 kyu - Formate uma sequência de nomes como 'Bart, Lisa e Maggie'.
 
 Escreva uma função que retorne uma string formatada como uma lista
-de nomes separados por vírgulas, exceto para os dois últimos nomes, 
-que devem ser separados por um "e" comercial.
+de nomes separados por vírgula, exceto para os dois últimos nomes, 
+que devem ser separados por um &.
 
-Exemplo: a representação binária de 1234 é 10011010010, 
-portanto, a função deve retornar 5 neste caso
+Exemplo1: para os nomes 'Bart, Lisa e Maggie', a função deve retornar
+'Bart, Lisa & Maggie'.
 
-Observação: todos os hashes são 
-pré-validados e conterão apenas A-Z, a-z, '-' e '.'.
+Exemplo2: para os nomes 'Bart, Lisa', a função deve retornar
+'Bart & Lisa'.
+
+Exemplo3: para os nomes 'Bart', a função deve retornar
+'Bart'.
 
 */
 

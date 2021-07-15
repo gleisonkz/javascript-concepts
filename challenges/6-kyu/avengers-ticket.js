@@ -45,15 +45,22 @@ function tickets(queue) {
   queue = [...queue];
 
   function hasChangeFor(changeDue) {
-    register.sort((a, b) => a - b);
+    register.sort((a, b) => b - a);
     let billSum = 0;
-    while (register.length) {
-      const bill = register.shift();
-      billSum += bill;
-      if (billSum >= changeDue) break;
+    let calcChangeDue = changeDue;
+
+    for (let index = 0; index < register.length; index++) {
+      const bill = register[index];
+      if (bill > changeDue) continue;
+      calcChangeDue -= bill;
+      if (calcChangeDue > -1) {
+        billSum += register.splice(index, 1)[0];
+        index--;
+      }
+      if (calcChangeDue === 0) break;
     }
 
-    return billSum == changeDue;
+    return billSum === changeDue;
   }
 
   while (queue.length) {

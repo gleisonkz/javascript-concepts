@@ -4,12 +4,12 @@ Escreva uma função que recebe um inteiro como entrada
 e retorna a representação desse número em binário. 
 
 a conversão deve ser realizada de forma 'manual' ou seja não é permitido
-utilizar método que fazem a conversão automaticamente.
+utilizar métodos nativos da linguagem para fazer a conversão.
 
 Exemplo: para o número 1234 deve ser retornado o número 10011010010, 
 */
 
-function integerToBit(num) {
+function integerToBitRecursive(num) {
   const binary = [];
 
   const divisionRecursively = (num) => {
@@ -21,6 +21,16 @@ function integerToBit(num) {
   };
   divisionRecursively(num);
   return +binary.reverse().join("");
+}
+
+function integerToBit(number) {
+  let binary = "";
+  while (number > 0) {
+    const reminder = number % 2;
+    binary = reminder + binary;
+    number = Math.floor(number / 2);
+  }
+  return +binary;
 }
 
 // Teste 1 deve retornar 11001;
