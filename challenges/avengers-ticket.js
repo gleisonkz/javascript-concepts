@@ -39,6 +39,33 @@ function tickets(peopleBills) {
   return "YES";
 }
 
+function tickets2(queue) {
+  const register = [];
+  const ticketPrice = 25;
+  queue = [...queue];
+
+  function hasChangeFor(changeDue) {
+    register.sort((a, b) => a - b);
+    let billSum = 0;
+    while (register.length) {
+      const bill = register.shift();
+      billSum += bill;
+      if (billSum >= changeDue) break;
+    }
+
+    return billSum == changeDue;
+  }
+
+  while (queue.length) {
+    const currentBill = queue.shift();
+    const changeDue = currentBill - ticketPrice;
+    if (changeDue > 0 && hasChangeFor(changeDue) == false) return "NO";
+    register.push(currentBill);
+  }
+
+  return "YES";
+}
+
 // Teste 1 deve retornar YES
 console.log(tickets([25, 25]));
 console.log(tickets([25, 25]) === "YES");
@@ -83,5 +110,5 @@ console.log(tickets(sample9) === "NO");
 
 // Teste 10 deve retornar NO
 const sample10 = [25, 50, 100, 25, 25, 25, 50];
-console.log(tickets(sample10));
-console.log(tickets(sample10) === "NO");
+console.log(tickets([...sample10]));
+console.log(tickets([...sample10]) === "NO");
