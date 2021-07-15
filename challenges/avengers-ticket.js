@@ -24,7 +24,7 @@ tickets([25, 25, 50, 50, 100]) // => NO. John não terá notas para dar 75 dóla
 
 */
 
-function tickets(peopleBills) {
+function ticketsOld(peopleBills) {
   let [$25, $50] = [0, 0];
 
   for (let i = 0; i < peopleBills.length; i++) {
@@ -39,7 +39,7 @@ function tickets(peopleBills) {
   return "YES";
 }
 
-function tickets2(queue) {
+function tickets(queue) {
   const register = [];
   const ticketPrice = 25;
   queue = [...queue];
@@ -67,48 +67,62 @@ function tickets2(queue) {
 }
 
 // Teste 1 deve retornar YES
-console.log(tickets([25, 25]));
-console.log(tickets([25, 25]) === "YES");
+const sample1 = [25, 25];
+console.log(tickets(sample1));
+console.log(assert(sample1, "YES"));
 
-// Teste 2 deve retornar YES
-console.log(tickets([25, 25, 50]));
-console.log(tickets([25, 25, 50]) === "YES");
+// Teste 2 deve retornar NO
+const sample2 = [25, 100];
+console.log(tickets(sample2));
+console.log(assert(sample2, "NO"));
 
 // Teste 3 deve retornar YES
-console.log(tickets([25, 25, 25, 100]));
-console.log(tickets([25, 25, 25, 100]) === "YES");
+const sample3 = [25, 25, 50];
+console.log(tickets(sample3));
+console.log(assert(sample3, "YES"));
 
-// Teste 4 deve retornar NO
-console.log(tickets([25, 100]));
-console.log(tickets([25, 100]) === "NO");
+// Teste 3 deve retornar YES
+const sample4 = [25, 25, 25, 100];
+console.log(tickets(sample4));
+console.log(assert(sample4, "YES"));
 
 // Teste 5 deve retornar NO
-console.log(tickets([25, 25, 50, 50, 100]));
-console.log(tickets([25, 25, 50, 50, 100]) === "NO");
+const sample5 = [25, 25, 50, 50, 100];
+console.log(tickets(sample5));
+console.log(assert(sample5, "NO"));
 
 // Teste 6 deve retornar YES
 const sample6 = [
   25, 50, 25, 100, 25, 25, 25, 100, 25, 25, 50, 100, 25, 50, 25, 100,
 ];
 console.log(tickets(sample6));
-console.log(tickets(sample6) === "YES");
+console.log(assert(sample6, "YES"));
 
 // Teste 7 deve retornar YES
 const sample7 = [25, 25, 50, 100, 25, 25, 25, 100, 25, 50, 25, 100];
 console.log(tickets(sample7));
-console.log(tickets(sample7) === "YES");
+console.log(assert(sample7, "YES"));
 
 // Teste 8 deve retornar NO
 const sample8 = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50];
 console.log(tickets(sample8));
-console.log(tickets(sample8) === "NO");
+console.log(assert(sample8, "NO"));
 
 // Teste 9 deve retornar NO
 const sample9 = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
 console.log(tickets(sample9));
-console.log(tickets(sample9) === "NO");
+console.log(assert(sample9, "NO"));
 
 // Teste 10 deve retornar NO
 const sample10 = [25, 50, 100, 25, 25, 25, 50];
-console.log(tickets([...sample10]));
-console.log(tickets([...sample10]) === "NO");
+console.log(tickets(sample10));
+console.log(assert(sample10, "NO"));
+
+// Teste 11 deve retornar YES
+const sample11 = [25, 25, 25, 25, 50, 100, 50];
+console.log(tickets(sample11));
+console.log(assert(sample11, "YES"));
+
+function assert(sample, expected) {
+  return tickets(sample) === expected ? "OK" : "Algo deu errado";
+}
