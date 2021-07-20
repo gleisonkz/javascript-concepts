@@ -72,7 +72,7 @@
       "suffix": ")",
       "options": [
         {
-          "label": "challenge"
+          "label": "kata"
         },
         {
           "label": "array-prototype"
