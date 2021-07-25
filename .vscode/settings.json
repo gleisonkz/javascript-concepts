@@ -1,5 +1,11 @@
 {
-  "cSpell.words": ["Cabuloso", "Dashatize", "Marizete", "endregion"],
+  "cSpell.words": [
+    "Cabuloso",
+    "Dashatize",
+    "Marizete",
+    "Thinkful",
+    "endregion"
+  ],
   "editor.codeLens": false,
   "typescript.implementationsCodeLens.enabled": false,
   "typescript.referencesCodeLens.enabled": false,
