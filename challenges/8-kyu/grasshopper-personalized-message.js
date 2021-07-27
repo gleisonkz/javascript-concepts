@@ -14,6 +14,15 @@ function greet(name, owner) {
   return name === owner ? "Hello boss" : "Hello guest";
 }
 
+function greet2(name, owner) {
+  return `Hello ${name === owner ? "boss" : "guest"}`;
+}
+
+function greet3(name, owner) {
+  const greetings = ["Hello guest", "Hello boss"];
+  return greetings[name === owner];
+}
+
 {
   // Teste 1 deve retornar 'Hello boss'
   const [name, owner] = ["Daniel", "Daniel"];
