@@ -4,5 +4,4 @@ function greet() {
 }
 
 greet();
-//ReferenceError:
-console.log(greeting);
+console.log(greeting); // ReferenceError
