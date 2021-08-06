@@ -12,8 +12,8 @@ Retorne os resultados como um array
 
 Exemplos:
 
-countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
-countBy(2,5) === [2,4,6,8,10]
+countBy(1,10) => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+countBy(2,5) =>  [2, 4, 6, 8, 10];
 
 */
 
@@ -21,40 +21,36 @@ const countBy = (step, times) => {
   return Array.from(Array(times), (_, i) => ++i * step);
 };
 
-Teste_1: {
-  //deve retornar [1,2,3,4,5,6,7,8,9,10]
+{
+  //Teste 1 deve retornar [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   const [sampleStep, sampleTime] = [1, 10];
   const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   console.log(countBy(sampleStep, sampleTime));
   console.log(assert(sampleStep, sampleTime, expected));
 }
-
-Teste_2: {
-  // deve retornar [2,4,6,8,10]
+{
+  //Teste 2 deve retornar [2, 4, 6, 8, 10]
   const [sampleStep, sampleTime] = [2, 5];
   const expected = [2, 4, 6, 8, 10];
   console.log(countBy(sampleStep, sampleTime));
   console.log(assert(sampleStep, sampleTime, expected));
 }
-
-Teste_3: {
-  // deve retornar [3,6,9,12,15,18,21]
+{
+  //Teste 3 deve retornar [3, 6, 9, 12, 15, 18, 21]
   const [sampleStep, sampleTime] = [3, 7];
   const expected = [3, 6, 9, 12, 15, 18, 21];
   console.log(countBy(sampleStep, sampleTime));
   console.log(assert(sampleStep, sampleTime, expected));
 }
-
-Teste_4: {
-  // deve retornar [50,100,150,200,250]
+{
+  //Teste 4 deve retornar [50, 100, 150, 200, 250]
   const [sampleStep, sampleTime] = [50, 5];
   const expected = [50, 100, 150, 200, 250];
   console.log(countBy(sampleStep, sampleTime));
   console.log(assert(sampleStep, sampleTime, expected));
 }
-
-Teste_5: {
-  // deve retornar [100,200,300,400,500,600]
+{
+  //Teste 5 deve retornar [100, 200, 300, 400, 500, 600]
   const [sampleStep, sampleTime] = [100, 6];
   const expected = [100, 200, 300, 400, 500, 600];
   console.log(countBy(sampleStep, sampleTime));

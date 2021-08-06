@@ -12,25 +12,20 @@ se a margem for maior ou igual à distância entre a e b.
 Por favor observe o seguinte:
 
 - Quando a estiver próximo de b, retorne 0.
-
-Por outro lado...
-
 - Quando a for menor que b, retorne -1.
 - Quando a for maior que b, retorne 1.
 
 Se a margem não for fornecida, trate-a como zero.
 
-Suponha: margem> = 0
-
 Exemplo 1
 Se a = 3, b = 5 e margin = 3, 
-close_compare(a, b, margin) deve retornar 0.
+closeCompare(a, b, margin) deve retornar 0.
 
 Isso ocorre porque a e b não estão separados por mais de 3 números.
 
 Exemplo 2
 Se a = 3, b = 5 e margin = 0, 
-close_compare(a, b, margin) deve retornar -1.
+closeCompare(a, b, margin) deve retornar -1.
 
 Isso ocorre porque a distância entre a e b é maior que 0 e a é menor que b.
 */
