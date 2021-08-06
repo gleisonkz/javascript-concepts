@@ -1,5 +1,4 @@
 /*
-
 Kata Nível 8 kyu - Convert number to reversed array of digits
 
 Dado um número não negativo aleatório, 
@@ -7,11 +6,14 @@ você deve retornar os dígitos
 desse número em uma matriz na ordem inversa.
 
 Exemplo: 348597 => [7,9,5,8,4,3]
-
 */
 
 function digitize(n) {
   return [...String(n)].reverse().map(Number);
+}
+
+function digitize(n) {
+  return n.toString().split("").reverse().map(Number);
 }
 
 // Teste 1 deve retornar [1, 3, 2, 5, 3]
