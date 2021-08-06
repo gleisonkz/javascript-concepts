@@ -2,17 +2,23 @@
 
 Kata Nível 8 kyu - Cat years, Dog years
 
-Eu tenho um gato e um cachorro. 
-Eu os peguei desde que eram um gatinho/cachorrinho. 
+Eu tenho um gato e um cachorro, 
+eu os peguei desde que eram um gatinho/cachorrinho. 
 
-Isso foi humanYears (humano anos) atrás. 
+Isso foi a humanYears (humano anos) atrás. 
 
-Retorne suas respectivas idades agora como 
+Crie uma função que retorne suas respectivas idades agora 
+considerando a sua idade em anos Humano | anos Gato | anos Cachorro
+o retorno deverá ser um array como o abaixo:
+
 [humanYears, catYears, dogYears]
 
 NOTAS: 
-humanYears será sempre >= a 1 
-humanYears sempre serão números inteiros
+
+- humanYears será sempre >= a 1 
+- humanYears sempre serão números inteiros
+
+Tabela de conversão de anos Humano para Gato | Cachorro
 
 Cat Years (anos em gato)
 15 cat years para o primeiro ano 
