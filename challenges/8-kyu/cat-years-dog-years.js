@@ -28,15 +28,15 @@ Cat Years (anos em gato)
 Dog Years (anos em cachorro)
 15 dog years para o primeiro ano 
 +9 dog years para o segundo ano 
-+5 dog years para cada ano subsequente 
-
++5 dog years para cada ano subsequente
 */
 
 const humanYearsCatYearsDogYears = (humanYears) => {
-  const calcYear = (n) => 24 + (humanYears - 2) * n;
-  if (humanYears === 1) return [humanYears, 15, 15];
-  if (humanYears === 2) return [humanYears, 24, 24];
-  return [humanYears, calcYear(4), calcYear(5)];
+  const [firstYear, secondYear] = [15, 24];
+  const calcYearsGreaterThan2 = (n) => secondYear + (humanYears - 2) * n;
+  if (humanYears === 1) return [humanYears, firstYear, firstYear];
+  if (humanYears === 2) return [humanYears, secondYear, secondYear];
+  return [humanYears, calcYearsGreaterThan2(4), calcYearsGreaterThan2(5)];
 };
 
 {
