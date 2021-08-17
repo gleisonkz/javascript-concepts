@@ -9,7 +9,6 @@ e cada letra maiúscula se torna minúscula.
 */
 
 String.prototype.toAlternatingCase = function () {
-  // Define your method here :)
   return this.split("")
     .map((letter) => {
       const isLowerCase = (value) => value === value.toLowerCase();
