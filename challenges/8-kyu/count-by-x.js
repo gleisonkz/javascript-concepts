@@ -17,9 +17,29 @@ countBy(2,5) =>  [2, 4, 6, 8, 10];
 
 */
 
-const countBy = (step, times) => {
+function countBy(step, times) {
   return Array.from(Array(times), (_, i) => ++i * step);
-};
+}
+
+function countBy(step, times) {
+  return [...Array(times)].map((_, i) => ++i * step);
+}
+
+function countBy(step, times) {
+  return [...Array(times)].reduce((acc, _, index) => {
+    return acc.push(++index * step) && acc;
+  }, []);
+}
+
+function countBy(step, times) {
+  const arr = [];
+  for (let index = 1; index <= times; index = ++index) {
+    const multiply = index * step;
+    arr.push(multiply);
+  }
+
+  return arr;
+}
 
 {
   //Teste 1 deve retornar [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
