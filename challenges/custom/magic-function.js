@@ -7,11 +7,11 @@ caso seja passado algum parâmetro que não seja dos tipos mencionados retorne u
 */
 
 function magicFunction(...args) {
-  const isInvalid = (value) =>
+  const isInvalidFn = (value) =>
     !["number", "string", "boolean"].includes(typeof value);
 
-  if (args.some(isInvalid)) return undefined;
-  return args.join("-");
+  const hasInvalid = args.some(isInvalidFn);
+  return hasInvalid ? undefined : args.join("-");
 }
 
 {
