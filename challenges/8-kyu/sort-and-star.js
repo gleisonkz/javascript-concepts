@@ -12,7 +12,7 @@ Você não pode remover ou adicionar elementos do array.
 */
 
 function twoSort(string) {
-  const [first] = string.sort();
+  const [first] = [...string.sort()];
   return first.split("").join("***");
 }
 
