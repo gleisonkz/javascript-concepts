@@ -19,3 +19,24 @@ function catName(name) {
 }
 
 var greeting = "Hello World";
+
+String.prototype.toAlternatingCase = function () {
+  const letters = Array.from(this);
+  console.log(letters);
+  const result = [];
+
+  for (let index = 0; index < letters.length; index++) {
+    const letter = letters[index];
+    if (letter === " ") {
+      result.push(letter);
+    } else {
+      if (letter == letter.toUpperCase()) {
+        result.push(letter.toLowerCase());
+        continue;
+      }
+      result.push(letter.toUpperCase());
+    }
+  }
+
+  return result.join("");
+};
