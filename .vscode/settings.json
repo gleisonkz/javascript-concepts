@@ -95,25 +95,28 @@
       "suffix": ")",
       "options": [
         {
+          "label": ""
+        },
+        {
           "label": "kata"
         },
         {
-          "label": "array-prototype"
+          "label": "array"
         },
         {
-          "label": "object-prototype"
+          "label": "object"
         },
         {
-          "label": "function-prototype"
+          "label": "function"
         },
         {
-          "label": "string-prototype"
+          "label": "string"
         },
         {
-          "label": "number-prototype"
+          "label": "number"
         },
         {
-          "label": "promise-prototype"
+          "label": "promise"
         }
       ]
     },
