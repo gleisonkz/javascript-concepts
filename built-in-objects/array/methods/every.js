@@ -1,7 +1,7 @@
 {
-  /* Array.Prototype.every
+  /* Array.prototype.every
 
-    retorna um booleano indicando se todos os elementos
+    retorna um booleano indicando se TODOS os elementos
     do array satisfazem a condição passada como parâmetro.
   */
 
